@@ -157,7 +157,14 @@ function addBookshelf() {
   const bookIsComplete = document.getElementById("inputBookIsComplete").checked;
 
   const generatedID = generateId();
-  const bookObject = generateBookObject(generatedID, bookTitle, bookAuthor, bookYear, bookIsComplete);
+  const bookObject = generateBookObject(
+    generatedID,
+    bookTitle,
+    bookAuthor,
+    parseInt(bookYear),
+    bookIsComplete
+  );
+
   books.push(bookObject);
 
   document.dispatchEvent(new Event(RENDER_EVENT));
